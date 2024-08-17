@@ -14,7 +14,7 @@ export const META = {
   url: SITE_URL,
   googleVerification: '-mTp3tTeT8C73D3xDgb2IZ6q9xuIl8pGhgTbIKMJk-s',
   naverVerification: 'xxx',
-  ogImage: '/opengraph.png',
+  ogImage: '/opengraph-image.png',
 } as const;
 
 export const getMetadata = (metadataProps?: any) => {
