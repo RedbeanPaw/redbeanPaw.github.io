@@ -5,6 +5,8 @@ import {
   Point02,
   Point03
 } from '../constants/images'
+import { motion } from 'framer-motion';
+import { containerVariants, itemVariants } from "@/constants/motion";
 
 export const SectionItems: FC<any> = ({ main, sub }) => {
   const items = [{
@@ -27,17 +29,23 @@ export const SectionItems: FC<any> = ({ main, sub }) => {
   },
   ]
   return (
-    <section className="grid md:max-xl:grid-cols-3 grid-cols-1 gap-4">
-      {items.map((item, idx) => (<article key={`item-${idx}`} className="flex flex-row gap-4 md:max-xl:flex-col md:max-xl:justify-center md:max-xl:items-center">
-        <Image src={item.icon} alt="ddd" width={80} height={80} />
-        <div className="mt-3 flex flex-col justify-center md:max-xl:items-center items-start">
-          <div className="flex gap-1">
+    <motion.section className="grid md:grid-cols-3 grid-cols-1 gap-12 md:gap-4"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      {items.map((item, idx) => (<article key={`item-${idx}`} className="flex flex-row gap-4 md:flex-col md:justify-center md:items-center">
+        <motion.div variants={itemVariants}>
+          <Image src={item.icon} alt="ddd" width={80} height={80} />
+        </motion.div>
+        <div className="mt-3 flex flex-col justify-center md:items-center items-start">
+          <motion.div variants={itemVariants} className="flex gap-1">
             <h2 className="text-gray-900 text-xl">{item.title}</h2>
             <h2 className="text-main text-xl font-extrabold">{item.point}</h2>
-          </div>
-          <p className="text-gray-400 font-semibold text-sm">{item.description}</p>
+          </motion.div>
+          <motion.p variants={itemVariants} className="text-gray-400 font-semibold text-sm">{item.description}</motion.p>
         </div>
       </article>))}
-    </section>
+    </motion.section>
   );
 };

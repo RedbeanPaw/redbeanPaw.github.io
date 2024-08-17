@@ -1,5 +1,4 @@
 "use client"
-
 import { useForm, SubmitHandler } from "react-hook-form";
 import {
   FormControl,
@@ -11,9 +10,12 @@ import {
   Button,
   Checkbox,
 } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
+
 import { CheckGroup } from "./CheckGroup";
 import { RadioGroup } from "./RadioGroup";
 import { useState, useCallback, useEffect, FC, useRef } from "react";
+import { REGEX } from "@/constants/regex";
 
 export interface ContactFormType {
   name: string;
@@ -24,6 +26,7 @@ export interface ContactFormType {
 }
 
 export const ContactForm: FC<any> = (props) => {
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -46,7 +49,7 @@ export const ContactForm: FC<any> = (props) => {
   });
   const [agree, setAgree] = useState(false);
 
-  const scriptURL = "https://script.google.com/macros/s/AKfycbzwXDgiDFUxHdsd8-9xfBMKqSTqwgDTF-V7PiM-8fBvMaEw0T6ibL43dg4oobZu7aV_/exec"
+  const scriptURL = "https://script.google.com/macros/s/AKfycbxK6qRrHJuL8p0h_N8TU-aw5AHhP8SLGCRpq_geJm5WhAQiNbC9NXtEZ1zkA5rezwx0tA/exec"
 
   const onSubmit: SubmitHandler<any> = useCallback((data: any) => {
     if (!agree) {
@@ -54,21 +57,30 @@ export const ContactForm: FC<any> = (props) => {
       return;
     }
     if (isValid && !isSubmitted) {
-      const form = document.getElementById(
-        'submit-to-google-sheet'
-      ) as HTMLFormElement;
+      const payload = new FormData();
+      const service = data.service.filter((s: any) => s.checked).map((item: any) => item.value)
+      payload.append('name', data.name);
+      payload.append('budget', data.budget);
+      payload.append('service', service.toString());
+      payload.append('phone', data.phone);
+      payload.append('email', data.email);
 
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      fetch(scriptURL, { method: 'POST', body: payload })
         .then(response => {
+          router.refresh();
           alert('제출이 성공하였습니다.')
           setAgree(false);
-          reset(); // 보내는 값이 성공값이면, form data reset
+          reset({
+            name: '',
+            budget: '',
+            service: [],
+            phone: '',
+            email: '',
+          });
         })
         .catch(error => console.error('Error!', error.message));
     }
   }, [agree, isValid]);
-
-  console.log("errors -------------->", errors)
 
   const genErrorMsg = useCallback((name: keyof ContactFormType) => {
     return errors[name]?.message as string || ''
@@ -77,6 +89,7 @@ export const ContactForm: FC<any> = (props) => {
   return (
     <form
       className="flex flex-col gap-8 w-full"
+      id="submit-to-google-sheet"
       onSubmit={handleSubmit((data) => {
         console.log(data);
         onSubmit(data)
@@ -128,7 +141,7 @@ export const ContactForm: FC<any> = (props) => {
           <p className="font-bold text-gray-700 mb-2">휴대폰번호</p>
           <Input isInvalid={!!errors?.phone} errorBorderColor="red.400" width={'100%'} height={'50px'} colorScheme="main" {...register("phone", {
             required: '휴대폰번호를 입력해주세요.', pattern: {
-              value: new RegExp("^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$"),
+              value: new RegExp(REGEX.phone),
               message: "올바른 휴대폰번호 형식이 아닙니다.",
             },
           })} type="tel" inputMode="tel" maxLength={11} placeholder="자주 사용하시는 휴대폰번호" />
@@ -140,7 +153,7 @@ export const ContactForm: FC<any> = (props) => {
           <p className="font-bold text-gray-700 mb-2">이메일</p>
           <Input isInvalid={!!errors?.email} errorBorderColor="red.400" width={'100%'} height={'50px'} colorScheme="main" {...register('email', {
             required: '이메일을 입력해주세요.', pattern: {
-              value: new RegExp("^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$"),
+              value: new RegExp(REGEX.email),
               message: "올바른 이메일 형식이 아닙니다.",
             },
           })} placeholder="자주 사용하시는 이메일" />
@@ -160,7 +173,7 @@ export const ContactForm: FC<any> = (props) => {
           </Checkbox>
         </FormLabel>
       </FormControl>
-      <Button disabled={!agree} type="submit" height={'60px'} colorScheme="main"><h3 className="text-xl font-bold tracking-tight	">
+      <Button isDisabled={!agree || isSubmitted} type="submit" height={'60px'} colorScheme="main"><h3 className="text-xl font-bold tracking-tight	">
         제출하기
       </h3></Button>
     </form>

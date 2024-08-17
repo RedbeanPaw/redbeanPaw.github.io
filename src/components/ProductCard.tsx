@@ -22,7 +22,7 @@ export const ProductCard: FC<any> = ({ sub, title, bgImage, icon, description })
     >
       <>
         <Image src={bgImage} fill objectFit="cover" alt={title} />
-        <article className={`absolute w-full h-full py-6 pl-6 pr-3 text-white transition-all ${backdropStyle}`}>
+        <article className={`absolute w-full h-full p-6 text-white transition-all ${backdropStyle}`}>
           <div className="flex justify-between items-start">
             <div>
               {!isShow && <Image src={icon} alt={title} width={60} height={60} />}

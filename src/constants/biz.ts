@@ -1,5 +1,7 @@
 import { ProBlog, ProDang, ProGoogle, ProInsta, ProPlace, ProImage01, ProImage02, ProImage03, ProImage04, ProImage05 } from "@/constants/images";
 
+export const URL = "https://www.olicorp.kr"
+
 export const sectionInfo = {
   portfolio: {
     title: '올리코퍼레이션은',
