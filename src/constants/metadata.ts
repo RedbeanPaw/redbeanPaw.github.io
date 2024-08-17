@@ -40,9 +40,9 @@ export const getMetadata = (metadataProps?: any) => {
       locale: 'ko_KR',
       type: 'website',
       url: PAGE_URL,
-      images: {
+      images: [{
         url: OG_IMAGE,
-      },
+      }],
     },
     verification: {
       google: META.googleVerification,

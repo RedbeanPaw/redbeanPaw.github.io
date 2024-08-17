@@ -24,13 +24,9 @@ export default function PageLayout({ children }: any) {
 
         requestAnimationFrame(animate);
     }, []);
-    return isLoading ?
-        <main className="w-screen h-screen flex flex-col justify-center bg-main items-center">
-            <p className="mb-4 text-slate-400">LOADING</p>
-            <Progress width={200} height={'8px'} colorScheme="main" size={'md'} isIndeterminate />
-        </main> : <>
-            {children}
-            <KakaoButton />
-            <Footer />
-        </>
+    return <>
+        {children}
+        <KakaoButton />
+        <Footer />
+    </>
 }

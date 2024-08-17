@@ -1,5 +1,5 @@
 import React from "react";
-import { META } from "@/constants/metadata";
+import { META, getMetadata } from "@/constants/metadata";
 
 export default function MetaTags({ }) {
 
@@ -10,6 +10,8 @@ export default function MetaTags({ }) {
         url: META.url,
         logo: `${META.url}/opengraph-image.png`,
     }
+
+    console.log("...getMetadata() ---------------->", { ...getMetadata() })
 
     return <>
         <meta name="description" content={META.description} />
