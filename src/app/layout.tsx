@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import { Providers } from "./providers";
 import Head from "next/head";
 import PageLayout from "@/components/PageLayout";
-import { META } from "../constants/metadata";
+import { META, getMetadata } from "../constants/metadata";
 import MetaTags from "./MetaTags";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: META.title,
-  description: META.description,
-  openGraph: {
-    images: [{ url: '/opengraph.png', alt: '올리코퍼레이션' }],
-  }
+  // title: META.title,
+  // description: META.description,
+  // openGraph: {
+  //   images: [{ url: '/opengraph.png', alt: '올리코퍼레이션' }],
+  // }
+  ...getMetadata()
 };
 
 export default function RootLayout({
