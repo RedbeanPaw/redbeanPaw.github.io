@@ -8,7 +8,7 @@ export default function MetaTags({ }) {
         "@type": "Organization",
         name: META.title,
         url: META.url,
-        logo: `${META.url}/opengraph.png`,
+        logo: `${META.url}/opengraph-image.png`,
     }
 
     return <>
@@ -19,16 +19,16 @@ export default function MetaTags({ }) {
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content={META.title} />
         <meta property="og:description" content={META.description} />
-        <meta property="og:image" content={`/opengraph.png`} />
+        <meta property="og:image" content={`/opengraph-image.png`} />
         <meta property="og:url" content={META.url} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={META.siteName} />
 
         {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content={`/opengraph.png`} />
+        <meta name="twitter:card" content={`/opengraph-image.png`} />
         <meta name="twitter:title" content={META.title} />
         <meta name="twitter:description" content={META.description} />
-        <meta name="twitter:image" content={`/opengraph.png`} />
+        <meta name="twitter:image" content={`/opengraph-image.png`} />
         <meta name="twitter:site" content={META.url} />
         <meta name="twitter:creator" content={META.siteName} />
 
