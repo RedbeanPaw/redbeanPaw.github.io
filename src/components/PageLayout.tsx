@@ -26,7 +26,7 @@ export default function PageLayout({ children }: any) {
     }, []);
     return <>
         {children}
-        <KakaoButton />
+        {/* <KakaoButton /> */}
         <Footer />
     </>
 }
