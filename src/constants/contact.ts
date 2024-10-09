@@ -1,7 +1,7 @@
 export const contact = {
   ceo: "",
-  company: "올리코퍼레이션",
-  bizNum: "사업자 등록번호: 373-07-02021",
-  address: "주소: 경기도 의정부시 오목로 150",
-  email: "oliver@olicorp.kr"
+  company: "레드빈포",
+  bizNum: "",
+  address: "경기도 성남시 분당구 정자일로 80",
+  email: "redbeanpaw0424@gmail.com"
 };

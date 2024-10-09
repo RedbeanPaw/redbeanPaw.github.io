@@ -16,11 +16,11 @@ export default function Home() {
     <main className="flex w-full min-h-screen flex-col">
       <MainBgSection />
       <PortfolioSection />
-      <MidBgSection />
+      {/* <MidBgSection />
       {
         isMobile ? <ProductsMobile /> : <ProductsPC />
-      }
-      <FooterBgSection />
+      } */}
+      {/* <FooterBgSection /> */}
     </main>
   );
 }

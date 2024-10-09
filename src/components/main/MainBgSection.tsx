@@ -19,23 +19,12 @@ export const MainBgSection: FC<any> = () => {
         animate="visible"
         variants={containerVariants}
       >
-        <motion.div variants={itemVariants}>
-          <Image src={LogoWhite} alt="올리코퍼레이션" width={150} height={44} />
-        </motion.div>
-        <motion.p className="md:text-xl text-lg my-4" variants={itemVariants}>마케팅 에이전시 올리코퍼레이션</motion.p>
-        <motion.h2 className="md:text-7xl sm:text-5xl text-4xl" variants={itemVariants}>당신의 사업을</motion.h2>
-        <motion.div variants={itemVariants}>
-          <h2 className="md:text-7xl sm:text-5xl text-4xl inline-flex md:gap-2 gap-1 items-center underline-text">더 높이<div className="">
-            <Image src={ArrowUp} alt="화살표"></Image>
-          </div> 올리다.</h2>
-        </motion.div>
-        <motion.div variants={itemVariants}>
-          <Link href={'/contact'}>
-            <Button width={160} height={'50px'} className="mt-8" variant='outline' colorScheme="white">
-              지금 문의하기
-            </Button>
-          </Link>
-        </motion.div>
+        {/* <motion.div variants={itemVariants}>
+          <Image src={LogoWhite} alt="Red Bean Paw" width={150} height={44} />
+        </motion.div> */}
+        <motion.p className="md:text-xl text-lg my-4" variants={itemVariants}>자그마한 고양이 발자국처럼</motion.p>
+        <motion.h2 className="md:text-7xl sm:text-5xl text-4xl" variants={itemVariants}>세상에 {"'조금'"}</motion.h2>
+        <motion.h2 className="md:text-7xl sm:text-5xl text-4xl" variants={itemVariants}>도움되는 앱을 만듭니다.</motion.h2>
 
         <motion.article className="absolute bottom-10 text-white w-full flex justify-center" variants={itemVariants}>
           <ScrollLink activeClass="active" to="portfolio" spy={true} smooth={true} duration={800} className="border border-white rounded-[50%] w-12 h-12 flex justify-center items-center cursor-pointer">

@@ -10,21 +10,21 @@ import { containerVariants, itemVariants } from "@/constants/motion";
 
 export const SectionItems: FC<any> = ({ main, sub }) => {
   const items = [{
-    title: '고정 클라이언트',
-    point: '20+',
-    description: '강남병원 및 프랜차이즈 등 다수 고객유치',
+    title: '요트다이스 점수 계산기',
+    point: '',
+    description: '편리하게 요트다이스 점수를 계산해주는 앱',
     icon: Point01
   },
   {
-    title: '마케팅 프로젝트',
-    point: '200+',
-    description: '200회 이상의 다수의 마케팅 프로젝트',
+    title: '마작 점수 계산기',
+    point: '',
+    description: 'COMMING SOON',
     icon: Point02
   },
   {
-    title: '크몽 서비스',
-    point: '4.9점',
-    description: '고객님들께서 평가해주신 빛나는 점수',
+    title: '금방 외우는 단어장',
+    point: '',
+    description: 'COMMING SOON',
     icon: Point03
   },
   ]

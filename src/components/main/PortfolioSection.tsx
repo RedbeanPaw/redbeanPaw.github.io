@@ -9,7 +9,7 @@ export const PortfolioSection: FC<any> = ({ main, sub }) => {
     <Element name="portfolio">
       <section id="portfolio" className="w-full md:max-w-[1200px] m-auto py-28 xl:px-0 px-8">
         <div className="mb-8">
-          <SectionTitle main={'올리코퍼레이션은'} sub={'PORTFOLIO'} description={'마케팅 에이전시 올리코퍼레이션은 아래와 같은 성과를 가지고 있습니다.'} />
+          <SectionTitle main={'우리의 작업들'} sub={'PORTFOLIO'} description={''} />
         </div>
         <div className="pt-8 md:max-xl:pt-16">
           <SectionItems />

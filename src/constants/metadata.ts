@@ -1,19 +1,19 @@
 export const SITE_URL = "https://www.olicorp.kr"
 export const META = {
-  title: '올리코퍼레이션',
-  siteName: '마케팅에이전시 올리코퍼레이션',
+  title: '레드빈포 | Red Bean Paw 🐾',
+  siteName: '즐겁게 작은 앱을 만드는 사람들의 모임',
   description:
-    "마케팅에이전시 올리코퍼레이션 | 평범한 마케팅회사를 찾으시면 절대 문의하지 마세요. 저희는 장기적인 비즈니스 파트너를 원합니다. 대표님의 성공이 곧 저희의 성공이기 때문이죠. 더 이상 당하지 마세요! 돈 받고 무책임하게 대처하는 수많은 회사들..답답하셨죠? 이제 저희와 함께 사업을 더 높이 '올리'실 차례입니다.",
+    "자그마한 고양이 발자국처럼 세상에 조금 도움되는 앱을 만듭니다.",
   keyword: [
-    '마케팅',
-    '바이럴마케팅',
-    '마케팅 실행사',
-    '광고 집행',
-    '광고 컨설팅',
+    '어플리케이션',
+    '앱',
+    'ios',
+    'android',
+    '앱개발',
   ],
   url: SITE_URL,
-  googleVerification: '-mTp3tTeT8C73D3xDgb2IZ6q9xuIl8pGhgTbIKMJk-s',
-  naverVerification: 'xxx',
+  googleVerification: '',
+  naverVerification: '',
   ogImage: '/opengraph-image.png',
 } as const;
 
