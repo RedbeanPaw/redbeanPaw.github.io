@@ -1,6 +1,6 @@
-export const SITE_URL = "https://www.olicorp.kr"
+export const SITE_URL = "https://redbeanpaw.github.io/"
 export const META = {
-  title: '레드빈포 | Red Bean Paw 🐾',
+  title: '레드빈포 | RedBean Paw 🐾',
   siteName: '즐겁게 작은 앱을 만드는 사람들의 모임',
   description:
     "자그마한 고양이 발자국처럼 세상에 조금 도움되는 앱을 만듭니다.",
@@ -20,7 +20,7 @@ export const META = {
 export const getMetadata = (metadataProps?: any) => {
   const { title, description, asPath, ogImage } = metadataProps || {};
 
-  const TITLE = title ? `${title} | 올리코퍼레이션` : META.title;
+  const TITLE = title ? `${title} | 레드빈포 | RedBean Paw 🐾` : META.title;
   const DESCRIPTION = description || META.description;
   const PAGE_URL = asPath ? asPath : '';
   const OG_IMAGE = ogImage || META.ogImage;
