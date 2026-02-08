@@ -13,18 +13,21 @@ export const SectionItems: FC<any> = ({ main, sub }) => {
     title: '요트다이스 점수 계산기',
     point: '',
     description: '편리하게 요트다이스 점수를 계산해주는 앱',
+    link: '#',
     icon: Point01
   },
   {
     title: '마작 점수 계산기',
     point: '',
-    description: 'COMMING SOON',
+    description: '간편한 마작 점수 계산기',
+    link: 'https://mahjongcalculator.netlify.app',
     icon: Point02
   },
   {
     title: '금방 외우는 단어장',
     point: '',
     description: 'COMMING SOON',
+    link: '',
     icon: Point03
   },
   ]
@@ -34,7 +37,7 @@ export const SectionItems: FC<any> = ({ main, sub }) => {
       animate="visible"
       variants={containerVariants}
     >
-      {items.map((item, idx) => (<article key={`item-${idx}`} className="flex flex-row gap-4 md:flex-col md:justify-center md:items-center">
+      {items.map((item, idx) => (<a key={`item-${idx}`} {...(item.link ? { href: item.link, target: "_blank", rel: "noopener noreferrer" } : {})} className="flex flex-row gap-4 md:flex-col md:justify-center md:items-center">
         <motion.div variants={itemVariants}>
           <Image src={item.icon} alt="ddd" width={80} height={80} />
         </motion.div>
@@ -45,7 +48,7 @@ export const SectionItems: FC<any> = ({ main, sub }) => {
           </motion.div>
           <motion.p variants={itemVariants} className="text-gray-400 font-semibold text-sm">{item.description}</motion.p>
         </div>
-      </article>))}
+      </a>))}
     </motion.section>
   );
 };
