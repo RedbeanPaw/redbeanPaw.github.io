@@ -13,7 +13,7 @@ export const SectionItems: FC<any> = ({ main, sub }) => {
     title: '요트다이스 점수 계산기',
     point: '',
     description: '편리하게 요트다이스 점수를 계산해주는 앱',
-    link: '#',
+    link: 'https://yacht-dice-calc.netlify.app',
     icon: Point01
   },
   {
