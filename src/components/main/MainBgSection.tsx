@@ -1,10 +1,8 @@
 "use client"
-import { useState, useCallback, useEffect, FC, useRef } from "react";
+import { FC } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@chakra-ui/react";
 import { MainBg } from "@/constants/images";
-import { LogoWhite, ArrowUp, ArrowDown } from "@/constants/images";
+import { ArrowDown } from "@/constants/images";
 import { Link as ScrollLink } from "react-scroll"
 import { motion } from 'framer-motion';
 import { containerVariants, itemVariants } from "@/constants/motion";
@@ -19,9 +17,6 @@ export const MainBgSection: FC<any> = () => {
         animate="visible"
         variants={containerVariants}
       >
-        {/* <motion.div variants={itemVariants}>
-          <Image src={LogoWhite} alt="Red Bean Paw" width={150} height={44} />
-        </motion.div> */}
         <motion.p className="md:text-xl text-lg my-4" variants={itemVariants}>자그마한 고양이 발자국처럼</motion.p>
         <motion.h2 className="md:text-7xl sm:text-5xl text-4xl" variants={itemVariants}>세상에 {"'조금'"}</motion.h2>
         <motion.h2 className="md:text-7xl sm:text-5xl text-4xl" variants={itemVariants}>도움되는 앱을 만듭니다.</motion.h2>

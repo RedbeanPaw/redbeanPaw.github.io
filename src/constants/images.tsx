@@ -1,7 +1,5 @@
 "use client"
 import Logo from "../assets/icons/logo.svg"
-import LogoWhite from "../assets/icons/olico_white.svg"
-import LogoGrey from "../assets/icons/olico_grey.svg"
 import ArrowUp from "../assets/icons/arrow.svg"
 import ArrowDown from "../assets/icons/arrow_down.svg"
 import MainBg from "../assets/images/main_bg.png"
@@ -23,8 +21,6 @@ import ProImage05 from "../assets/images/pro_image_05.png"
 import Kakao from "../assets/icons/kakao.svg"
 export {
   Logo,
-  LogoWhite,
-  LogoGrey,
   ArrowUp,
   ArrowDown,
   Point01,

@@ -1,7 +1,5 @@
-import { useState, useCallback, useEffect, FC, useRef } from "react";
+import { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { LogoGrey } from "@/constants/images";
 import { contact } from "@/constants/contact";
 
 export const Footer: FC<any> = ({ main, sub }) => {
@@ -11,14 +9,6 @@ export const Footer: FC<any> = ({ main, sub }) => {
         <div className="flex gap-1 items-center">
           <p className="font-bold">{contact.company}</p>
         </div>
-        {/* <div className="flex gap-1 items-center">
-          <p>사업자 등록번호:</p>
-          <p>{contact.bizNum}</p>
-        </div>
-        <div className="flex gap-1 items-center">
-          <p>주소:</p>
-          <p>{contact.address}</p>
-        </div> */}
         <div className="flex gap-1 items-center">
           <p>이메일:</p>
           <Link className="text-inherit underline" href={`mailto:${contact.email}`} >
